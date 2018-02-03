@@ -1,0 +1,17 @@
+{% if list_group %}
+    <div class="list-group">
+        {% for item in list_group.children %}
+            {% if item.active %}
+                <li class="list-group-item active">
+                    {% else %}
+                <li class="list-group-item">
+            {% endif %}
+        <a href="{{ item.url }}">{{ item.text }}
+            {% if item.badge %}
+                <span class="badge">{{ item.badge }}</span>
+            {% endif %}
+        </a>
+        </li>
+        {% endfor %}
+    </div>
+{% endif %}

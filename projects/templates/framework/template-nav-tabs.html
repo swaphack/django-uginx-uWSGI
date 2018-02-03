@@ -1,0 +1,14 @@
+{% load static %}
+{% if nav_tabs %}
+    <ul class="nav nav-tabs">
+        {% for item in nav_tabs.children %}
+            {% if item.active %}
+                <li class="active">
+                    {% else %}
+                <li>
+            {% endif %}
+        <a href="{{ item.url }}">{{ item.text }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+{% endif %}

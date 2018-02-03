@@ -1,0 +1,14 @@
+{% load static %}
+{% if navpills %}
+    <ul class="nav nav-pills">
+        {% for item in navpills.children %}
+            {% if item.active %}
+                <li class="active">
+                    {% else %}
+                <li>
+            {% endif %}
+        <a href="{{ item.url }}">{{ item.text }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+{% endif %}

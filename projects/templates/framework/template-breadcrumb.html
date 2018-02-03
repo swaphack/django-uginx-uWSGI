@@ -1,0 +1,18 @@
+{% load static %}
+{% if breadcrumb %}
+    <ol class="breadcrumb pull-left">
+        {% for item in breadcrumb.children %}
+            {% if item.active %}
+                <li class="active">
+            {% else %}
+                <li>
+            {% endif %}
+                {% if item.url %}
+                    <a href="{{ item.url }}">{{ item.text }}</a>
+                {% else %}
+                    {{ item.text }}
+                {% endif %}
+                </li>
+        {% endfor %}
+    </ol>
+{% endif %}

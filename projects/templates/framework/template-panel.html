@@ -1,0 +1,22 @@
+{% if panel %}
+    <div class="panel panel-default">
+        {% if panel.title %}
+            <div class="panel-heading">
+                {{ panel.title }}
+            </div>
+        {% endif %}
+        {% if panel.body %}
+            <div class="panel-body">
+                {{ panel.body }}
+            </div>
+        {% endif %}
+        {% if panel.extensions %}
+            {% code panel.extensions %}
+        {% endif %}
+        {% if panel.footer %}
+            <div class="panel-footer">
+                {{ panel.footer }}
+            </div>
+        {% endif %}
+    </div>
+{% endif %}

@@ -1,0 +1,10 @@
+{% load static %}
+{% if item %}
+    {% if item.active %}
+        <div class="item active">
+    {% else %}
+        <div class="item">
+    {% endif %}
+            <img class="img img-responsive" style="width: 100%;" src="{% static item.src %}" href="{{ item.url }}"/>
+        </div>
+{% endif %}

@@ -1,0 +1,25 @@
+{% extends 'framework/template.html' %}
+{% load static %}
+
+{% block css %}
+{% endblock %}
+
+{% block js %}
+{% endblock %}
+
+{% block title %}
+    Shop List
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            {% for item in items %}
+                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3 center-block">
+                    <img src = '{% static  item.icon  %}' alt='{{ item.name }}'/>
+                    <a>{{ item.name }}</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

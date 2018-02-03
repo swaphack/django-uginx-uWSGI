@@ -1,0 +1,14 @@
+{% if dropdown %}
+    <div class="dropdown">
+        <button type="button" class="btn dropdown-toggle" id="{{ dropdown.id }}" data-toggle="dropdown">
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="{{ dropdown.id }}">
+            {% for item in dropdown.children %}
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="{{ item.url }}">{{ item.text }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}

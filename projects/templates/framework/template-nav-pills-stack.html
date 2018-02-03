@@ -1,0 +1,18 @@
+{% load static %}
+{% if nav_pills_stack %}
+    <ul class="nav nav-pills nav-stacked" style="max-width: 260px">
+        {% for item in nav_pills_stack.children %}
+            {% if item.active %}
+                <li class="active">
+                    {% else %}
+                <li>
+            {% endif %}
+        <a href="{{ item.url }}">{{ item.text }}
+            {% if item.badge %}
+                <span class="badge">{{ item.badge }}</span>
+            {% endif %}
+        </a>
+        </li>
+        {% endfor %}
+    </ul>
+{% endif %}

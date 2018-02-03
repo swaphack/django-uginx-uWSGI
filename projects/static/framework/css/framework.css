@@ -1,0 +1,19 @@
+.header,
+.content,
+.footer
+{
+    text-align: center;
+    float: left;
+    width: 100%;
+}
+
+.fill-parent {
+    width: 100%;
+    height: 100%;
+}
+
+.default-size
+{
+    height: 0;
+    padding-bottom:100%;
+}

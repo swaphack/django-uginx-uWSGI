@@ -1,0 +1,18 @@
+{% if collapse %}
+    <div class="panel-group" id="{{ collapse.id }}">
+        {% for item in collapse.children %}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <a data-toggle="collapse" data-parent="#{{ collapse.id }}" href="#{{ item.url }}">{{ item.text }}</a>
+                    </div>
+                </div>
+                <div id="{{ item.url }}" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        {{ item.body }}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}

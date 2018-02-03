@@ -1,0 +1,14 @@
+{% load static %}
+{% if pager %}
+    <ul class="pager">
+        {% for item in pagination.children %}
+            {% if item.disabled %}
+                <li class="disabled">
+                    {% else %}
+                <li>
+            {% endif %}
+        <a href="{{ item.url }}">{{ item.text }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+{% endif %}

@@ -1,0 +1,26 @@
+{% load static %}
+{% if carousel %}
+    <div class="carousel slide" id="{{ carousel.id }}">
+        <ol class="carousel-indicators">
+            {% for item in carousel.children %}
+                {% if item.active %}
+                    <li data-target="#{{ carousel.id }}" data-slide-to="{{ forloop.counter0 }}" class="active"></li>
+                {% else %}
+                    <li data-target="#{{ carousel.id }}" data-slide-to="{{ forloop.counter0 }}"></li>
+                {% endif %}
+            {% endfor %}
+        </ol>
+        <div class="carousel-inner">
+            {% for item in carousel.children %}
+                {% include item.node %}
+            {% endfor %}
+            </div>
+            <a class="carousel-control left" style="background-image:none !important;" href="#{{ carousel.id }}" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            </a>
+            <a class="carousel-control right" style="background-image:none !important;" href="#{{ carousel.id }}" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            </a>
+        </div>
+    </div>
+{% endif %}
